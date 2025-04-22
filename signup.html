@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입 - Co:Re</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .auth-form-container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: white;
+            box-shadow: var(--shadow-sm);
+            border-radius: var(--border-radius);
+        }
+        
+        .auth-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .auth-header h1 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .auth-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .form-group label {
+            font-weight: 500;
+            color: var(--text-color);
+        }
+        
+        .form-group input {
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+        
+        .auth-footer {
+            text-align: center;
+            margin-top: 2rem;
+            color: var(--light-text);
+        }
+        
+        .auth-footer a {
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+        
+        .auth-page {
+            padding: 5rem 0;
+            background-color: var(--bg-light);
+            min-height: calc(100vh - 70px);
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <a href="./" class="logo">Co:Re</a>
+            <nav>
+                <ul class="main-nav">
+                    <li><a href="features/ai-tutor.html">AI 튜터</a></li>
+                    <li><a href="features/daily-message.html">1Day1Message</a></li>
+                    <li><a href="features/ai-facilitator.html">AI 퍼실리테이터</a></li>
+                    <li><a href="features/ai-reflection.html">AI 리플렉션</a></li>
+                    <li><a href="features/ai-exam.html">AI 시험관리</a></li>
+                    <li><a href="features/ai-secretary.html">AI 비서</a></li>
+                    <li><a href="features/ai-coding-quiz.html">AI 코딩 퀴즈</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <a href="signup.html" class="btn btn-primary">회원가입</a>
+                <a href="login.html" class="btn btn-secondary">로그인</a>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="auth-page">
+        <div class="container">
+            <div class="auth-form-container">
+                <div class="auth-header">
+                    <h1>회원가입</h1>
+                    <p>Co:Re의 혁신적인 AI 학습 경험을 시작하세요</p>
+                </div>
+                <form class="auth-form">
+                    <div class="form-group">
+                        <label for="name">이름</label>
+                        <input type="text" id="name" placeholder="이름을 입력하세요" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">이메일</label>
+                        <input type="email" id="email" placeholder="이메일을 입력하세요" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">비밀번호</label>
+                        <input type="password" id="password" placeholder="비밀번호를 입력하세요" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm-password">비밀번호 확인</label>
+                        <input type="password" id="confirm-password" placeholder="비밀번호를 다시 입력하세요" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">가입하기</button>
+                </form>
+                <div class="auth-footer">
+                    <p>이미 계정이 있으신가요? <a href="login.html">로그인</a></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>Co:Re</h3>
+                    <p>미래 학습을 위한 AI 플랫폼</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>기능 살펴보기</h4>
+                        <ul>
+                            <li><a href="features/ai-tutor.html">AI 튜터</a></li>
+                            <li><a href="features/daily-message.html">1Day1Message</a></li>
+                            <li><a href="features/ai-facilitator.html">AI 퍼실리테이터</a></li>
+                            <li><a href="features/ai-reflection.html">AI 리플렉션</a></li>
+                            <li><a href="features/ai-exam.html">AI 시험관리</a></li>
+                            <li><a href="features/ai-secretary.html">AI 비서</a></li>
+                            <li><a href="features/ai-coding-quiz.html">AI 코딩 퀴즈</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>회사 정보</h4>
+                        <ul>
+                            <li><a href="#">소개</a></li>
+                            <li><a href="#">팀</a></li>
+                            <li><a href="#">블로그</a></li>
+                            <li><a href="#">채용</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>지원</h4>
+                        <ul>
+                            <li><a href="#">도움말 센터</a></li>
+                            <li><a href="#">자주 묻는 질문</a></li>
+                            <li><a href="#">문의하기</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>법률</h4>
+                        <ul>
+                            <li><a href="#">이용약관</a></li>
+                            <li><a href="#">개인정보처리방침</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Co:Re. All rights reserved.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html> 
