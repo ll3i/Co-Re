@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Co:Re - 미래 학습을 위한 AI 플랫폼</title>
     <link rel="stylesheet" href="/Co-Re/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="description" content="Co:Re는 AI 기반 맞춤형 학습 플랫폼으로, 개인화된 학습 경험과 효율적인 학습 관리를 제공합니다.">
 </head>
 <body>
     <header class="navbar">
@@ -27,7 +28,7 @@
                 <a href="/Co-Re/signup.html" class="btn btn-primary">회원가입</a>
                 <a href="/Co-Re/login.html" class="btn btn-secondary">로그인</a>
             </div>
-            <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="모바일 메뉴 열기">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -48,6 +49,29 @@
                 </div>
                 <div class="hero-image">
                     <img src="/Co-Re/images/hero-illustration.svg" alt="Co:Re AI 학습 플랫폼 일러스트레이션">
+                </div>
+            </div>
+        </section>
+
+        <section id="stats" class="stats">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">10,000+</div>
+                        <div class="stat-label">활성 사용자</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">98%</div>
+                        <div class="stat-label">만족도</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">35%</div>
+                        <div class="stat-label">학습 효율 증가</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">7</div>
+                        <div class="stat-label">AI 기반 학습 도구</div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -107,14 +131,52 @@
                         <p>학습 일정 관리와 과제 알림, 맞춤형 학습 계획을 제안합니다.</p>
                         <a href="/Co-Re/features/ai-secretary.html" class="feature-link">자세히 보기 <i class="fas fa-arrow-right"></i></a>
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <h3>AI 코딩 퀴즈</h3>
-                        <p>프로그래밍 학습을 위한 인터랙티브 코딩 퀴즈와 실시간 피드백을 제공합니다.</p>
-                        <a href="/Co-Re/features/ai-coding-quiz.html" class="feature-link">자세히 보기 <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="showcase">
+            <div class="container">
+                <div class="showcase-content">
+                    <div class="section-header">
+                        <h2><span class="highlight">AI 코딩 퀴즈</span>로 프로그래밍 실력 향상</h2>
+                        <p>프로그래밍 학습을 위한 인터랙티브 코딩 퀴즈와 실시간 피드백으로 코딩 실력을 향상시켜 보세요.</p>
                     </div>
+                    <div class="showcase-features">
+                        <div class="showcase-feature">
+                            <div class="icon-circle">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div class="showcase-feature-content">
+                                <h3>인터랙티브 코딩 환경</h3>
+                                <p>브라우저에서 바로 코드를 작성하고 실행할 수 있는 환경을 제공합니다.</p>
+                            </div>
+                        </div>
+                        <div class="showcase-feature">
+                            <div class="icon-circle">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="showcase-feature-content">
+                                <h3>실시간 코드 분석</h3>
+                                <p>AI가 작성한 코드를 실시간으로 분석하여 개선점을 제안합니다.</p>
+                            </div>
+                        </div>
+                        <div class="showcase-feature">
+                            <div class="icon-circle">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="showcase-feature-content">
+                                <h3>단계별 학습 과정</h3>
+                                <p>초보자부터 고급 사용자까지 수준에 맞는 코딩 과제를 제공합니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="showcase-cta">
+                        <a href="/Co-Re/features/ai-coding-quiz.html" class="btn btn-primary">AI 코딩 퀴즈 시작하기</a>
+                    </div>
+                </div>
+                <div class="showcase-image">
+                    <img src="/Co-Re/images/coding-illustration.svg" alt="AI 코딩 퀴즈 일러스트레이션" onerror="this.src='/Co-Re/images/hero-illustration.svg'">
                 </div>
             </div>
         </section>
@@ -157,7 +219,7 @@
                     <h2>사용자 <span class="highlight">리뷰</span></h2>
                     <p>Co:Re를 통해 학습 효율성을 높인 사용자들의 이야기</p>
                 </div>
-                <div class="testimonial-slider">
+                <div class="testimonial-slider" id="testimonialSlider">
                     <div class="testimonial">
                         <div class="testimonial-content">
                             <p>"Co:Re의 AI 튜터 덕분에 프로그래밍 개념을 이해하는 데 큰 도움을 받았습니다. 24시간 질문할 수 있는 환경이 정말 편리해요."</p>
@@ -196,13 +258,13 @@
                     </div>
                 </div>
                 <div class="slider-controls">
-                    <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
-                    <div class="slider-dots">
+                    <button class="prev-btn" id="prevBtn" aria-label="이전 리뷰 보기"><i class="fas fa-chevron-left"></i></button>
+                    <div class="slider-dots" id="sliderDots">
                         <span class="dot active"></span>
                         <span class="dot"></span>
                         <span class="dot"></span>
                     </div>
-                    <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
+                    <button class="next-btn" id="nextBtn" aria-label="다음 리뷰 보기"><i class="fas fa-chevron-right"></i></button>
                 </div>
             </div>
         </section>
@@ -231,11 +293,11 @@
                             <li class="not-included"><i class="fas fa-times"></i> AI 비서</li>
                             <li class="not-included"><i class="fas fa-times"></i> AI 코딩 퀴즈</li>
                         </ul>
-                        <a href="/Co-Re/signup.html" class="btn btn-outline">시작하기</a>
+                        <a href="/Co-Re/signup.html" class="btn btn-secondary">시작하기</a>
                     </div>
                     <div class="pricing-card popular">
+                        <div class="popular-badge">인기</div>
                         <div class="pricing-header">
-                            <div class="popular-badge">인기</div>
                             <h3>Premium</h3>
                             <div class="price">
                                 <span class="amount">9,900원</span>
@@ -252,37 +314,38 @@
                             <li><i class="fas fa-check"></i> AI 비서</li>
                             <li><i class="fas fa-check"></i> AI 코딩 퀴즈</li>
                         </ul>
-                        <a href="/Co-Re/signup.html" class="btn btn-primary">시작하기</a>
+                        <a href="/Co-Re/signup.html" class="btn btn-primary">지금 시작하기</a>
                     </div>
                     <div class="pricing-card">
                         <div class="pricing-header">
                             <h3>Team</h3>
                             <div class="price">
-                                <span class="amount">79,000원</span>
+                                <span class="amount">49,000원</span>
                                 <span class="period">/월</span>
                             </div>
-                            <p class="description">10인 이하 팀을 위한 요금제</p>
+                            <p class="description">5인 이상 그룹을 위한 플랜</p>
                         </div>
                         <ul class="pricing-features">
-                            <li><i class="fas fa-check"></i> 프리미엄 기능 전체</li>
-                            <li><i class="fas fa-check"></i> 팀원 10명까지 계정 생성</li>
-                            <li><i class="fas fa-check"></i> 팀 협업 기능</li>
-                            <li><i class="fas fa-check"></i> 팀 성과 분석</li>
-                            <li><i class="fas fa-check"></i> 우선 기술 지원</li>
+                            <li><i class="fas fa-check"></i> Premium 기능 전체</li>
+                            <li><i class="fas fa-check"></i> 그룹 학습 관리</li>
+                            <li><i class="fas fa-check"></i> 팀 협업 도구</li>
+                            <li><i class="fas fa-check"></i> 학습 성과 분석</li>
                             <li><i class="fas fa-check"></i> 관리자 대시보드</li>
+                            <li><i class="fas fa-check"></i> 우선 기술 지원</li>
+                            <li><i class="fas fa-check"></i> API 연동</li>
                         </ul>
-                        <a href="/Co-Re/signup.html" class="btn btn-outline">문의하기</a>
+                        <a href="/Co-Re/contact.html" class="btn btn-secondary">문의하기</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="cta">
+        <section class="cta-section">
             <div class="container">
                 <div class="cta-content">
-                    <h2>지금 Co:Re와 함께 <span class="highlight">새로운 학습 경험</span>을 시작하세요</h2>
-                    <p>개인 맞춤형 AI 학습 플랫폼으로 더 효율적이고 즐거운 학습을 경험해보세요.</p>
-                    <a href="/Co-Re/signup.html" class="btn btn-large btn-primary">무료로 시작하기</a>
+                    <h2>지금 <span class="highlight">Co:Re</span>와 함께 학습을 시작하세요</h2>
+                    <p>AI 기반 맞춤형 학습으로 더 효율적인 학습 경험을 만나보세요</p>
+                    <a href="/Co-Re/signup.html" class="btn btn-primary">무료 회원가입</a>
                 </div>
             </div>
         </section>
@@ -290,62 +353,107 @@
 
     <footer>
         <div class="container">
-            <div class="footer-content">
+            <div class="footer-top">
                 <div class="footer-logo">
-                    <h3>Co:Re</h3>
+                    <a href="/Co-Re/">Co:Re</a>
                     <p>미래 학습을 위한 AI 플랫폼</p>
                 </div>
                 <div class="footer-links">
-                    <div class="footer-column">
-                        <h4>기능 살펴보기</h4>
+                    <div class="footer-links-column">
+                        <h3>학습 기능</h3>
                         <ul>
                             <li><a href="/Co-Re/features/ai-tutor.html">AI 튜터</a></li>
                             <li><a href="/Co-Re/features/daily-message.html">1Day1Message</a></li>
                             <li><a href="/Co-Re/features/ai-facilitator.html">AI 퍼실리테이터</a></li>
                             <li><a href="/Co-Re/features/ai-reflection.html">AI 리플렉션</a></li>
-                            <li><a href="/Co-Re/features/ai-exam.html">AI 시험관리</a></li>
-                            <li><a href="/Co-Re/features/ai-secretary.html">AI 비서</a></li>
-                            <li><a href="/Co-Re/features/ai-coding-quiz.html">AI 코딩 퀴즈</a></li>
                         </ul>
                     </div>
-                    <div class="footer-column">
-                        <h4>회사 정보</h4>
+                    <div class="footer-links-column">
+                        <h3>회사 정보</h3>
                         <ul>
-                            <li><a href="#">소개</a></li>
-                            <li><a href="#">팀</a></li>
-                            <li><a href="#">블로그</a></li>
-                            <li><a href="#">채용</a></li>
+                            <li><a href="/Co-Re/about.html">Co:Re 소개</a></li>
+                            <li><a href="/Co-Re/team.html">팀 소개</a></li>
+                            <li><a href="/Co-Re/blog.html">블로그</a></li>
+                            <li><a href="/Co-Re/careers.html">채용정보</a></li>
                         </ul>
                     </div>
-                    <div class="footer-column">
-                        <h4>지원</h4>
+                    <div class="footer-links-column">
+                        <h3>고객 지원</h3>
                         <ul>
-                            <li><a href="#">도움말 센터</a></li>
-                            <li><a href="#">자주 묻는 질문</a></li>
-                            <li><a href="#">문의하기</a></li>
+                            <li><a href="/Co-Re/contact.html">문의하기</a></li>
+                            <li><a href="/Co-Re/faq.html">자주 묻는 질문</a></li>
+                            <li><a href="/Co-Re/privacy.html">개인정보처리방침</a></li>
+                            <li><a href="/Co-Re/terms.html">이용약관</a></li>
                         </ul>
                     </div>
-                    <div class="footer-column">
-                        <h4>법률</h4>
-                        <ul>
-                            <li><a href="#">이용약관</a></li>
-                            <li><a href="#">개인정보처리방침</a></li>
-                        </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>소셜 미디어</h3>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2023 Co:Re. All rights reserved.</p>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                </div>
             </div>
         </div>
     </footer>
 
-    <script src="/Co-Re/js/main.js"></script>
+    <script>
+        // 모바일 메뉴 토글
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            const nav = document.querySelector('.main-nav');
+            nav.classList.toggle('active');
+            this.classList.toggle('active');
+        });
+
+        // 슬라이더 기능
+        const testimonialSlider = document.getElementById('testimonialSlider');
+        const dots = document.querySelectorAll('.dot');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        let currentSlide = 0;
+        const testimonials = document.querySelectorAll('.testimonial');
+
+        function updateSlider() {
+            // 모바일에서는 스크롤로 이동, 데스크탑에서는 transform으로 이동
+            if (window.innerWidth <= 768) {
+                const testimonial = testimonials[currentSlide];
+                testimonial.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+            } else {
+                testimonialSlider.style.transform = `translateX(-${currentSlide * 100 / testimonials.length}%)`;
+            }
+            
+            // 도트 활성화
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+        }
+
+        prevBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + testimonials.length) % testimonials.length;
+            updateSlider();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % testimonials.length;
+            updateSlider();
+        });
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentSlide = index;
+                updateSlider();
+            });
+        });
+
+        // 윈도우 크기 변경 시 슬라이더 업데이트
+        window.addEventListener('resize', updateSlider);
+    </script>
 </body>
 </html> 
