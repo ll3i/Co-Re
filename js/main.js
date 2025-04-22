@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { threshold: 0.1 });
 
   // 애니메이션 대상 요소들
-  const animatedElements = document.querySelectorAll('.feature, .benefit-item, .testimonial, .pricing-plan');
+  const animatedElements = document.querySelectorAll('.feature-card, .benefit-item, .testimonial, .pricing-card, .step');
   animatedElements.forEach(el => {
     el.classList.add('animate-on-scroll');
     observer.observe(el);
@@ -73,6 +73,16 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // 모바일 메뉴 토글 기능 활성화
   addMobileMenuToggle();
+
+  // 모바일 메뉴 버튼 클릭 이벤트 (기존 버튼이 있는 경우)
+  const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+  if (mobileMenuBtn) {
+    const mainNav = document.querySelector('.main-nav');
+    mobileMenuBtn.addEventListener('click', function() {
+      mainNav.classList.toggle('active');
+      mobileMenuBtn.classList.toggle('active');
+    });
+  }
 
   // 문의하기 폼 처리
   const contactForm = document.querySelector('.contact-form');
@@ -230,4 +240,88 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // 사용자 리뷰 슬라이더 구현
+  const testimonialSlider = document.querySelector('.testimonial-slider');
+  if (testimonialSlider) {
+    const testimonials = testimonialSlider.querySelectorAll('.testimonial');
+    const dots = document.querySelectorAll('.slider-dots .dot');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    
+    let currentIndex = 0;
+    
+    // 슬라이드 변경 함수
+    const changeSlide = (index) => {
+      // 범위 체크
+      if (index < 0) index = testimonials.length - 1;
+      if (index >= testimonials.length) index = 0;
+      
+      // 현재 활성 슬라이드 비활성화
+      testimonials.forEach(slide => slide.style.display = 'none');
+      dots.forEach(dot => dot.classList.remove('active'));
+      
+      // 새 슬라이드 활성화
+      testimonials[index].style.display = 'block';
+      dots[index].classList.add('active');
+      
+      currentIndex = index;
+    };
+    
+    // 초기 슬라이드 설정
+    changeSlide(0);
+    
+    // 다음 버튼 클릭 이벤트
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => changeSlide(currentIndex + 1));
+    }
+    
+    // 이전 버튼 클릭 이벤트
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => changeSlide(currentIndex - 1));
+    }
+    
+    // 도트 클릭 이벤트
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => changeSlide(index));
+    });
+    
+    // 자동 슬라이드 변경 (5초마다)
+    setInterval(() => {
+      changeSlide(currentIndex + 1);
+    }, 5000);
+  }
+
+  // 요금제 카드 호버 효과
+  const pricingCards = document.querySelectorAll('.pricing-card');
+  if (pricingCards.length > 0) {
+    pricingCards.forEach(card => {
+      card.addEventListener('mouseenter', function() {
+        this.classList.add('hover');
+      });
+      
+      card.addEventListener('mouseleave', function() {
+        this.classList.remove('hover');
+      });
+      
+      // 요금제 버튼 클릭 이벤트
+      const button = card.querySelector('.btn');
+      if (button) {
+        button.addEventListener('click', function(e) {
+          e.preventDefault();
+          
+          // 로그인 확인
+          if (sessionStorage.getItem('isLoggedIn') !== 'true') {
+            alert('서비스를 이용하기 위해 로그인이 필요합니다.');
+            window.location.href = 'login.html';
+          } else {
+            // 해당 요금제 선택 처리
+            const planName = card.querySelector('h3').textContent;
+            alert(`${planName} 요금제를 선택하셨습니다. 결제 페이지로 이동합니다.`);
+            // 결제 페이지 이동 처리 (구현 필요시)
+          }
+        });
+      }
+    });
+  }
 });
