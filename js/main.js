@@ -35,52 +35,37 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 모바일 메뉴 처리
-  const addMobileMenuToggle = () => {
-    const header = document.querySelector('header');
-    const nav = document.querySelector('nav');
-    
-    // 모바일 메뉴 버튼 추가
-    const mobileMenuBtn = document.createElement('button');
-    mobileMenuBtn.classList.add('mobile-menu-btn');
-    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-    mobileMenuBtn.style.display = 'none';
-    
-    // 창 크기가 작을 때 버튼 표시
-    const checkWindowSize = () => {
-      if (window.innerWidth <= 768) {
-        mobileMenuBtn.style.display = 'block';
-        nav.classList.add('mobile-nav');
-      } else {
-        mobileMenuBtn.style.display = 'none';
-        nav.classList.remove('mobile-nav');
-        nav.classList.remove('active');
-      }
-    };
-    
-    // 버튼 클릭시 메뉴 토글
-    mobileMenuBtn.addEventListener('click', () => {
-      nav.classList.toggle('active');
-    });
-    
-    // 초기화
-    header.insertBefore(mobileMenuBtn, nav);
-    checkWindowSize();
-    
-    // 화면 크기 변경 감지
-    window.addEventListener('resize', checkWindowSize);
-  };
-  
-  // 모바일 메뉴 토글 기능 활성화
-  addMobileMenuToggle();
-
   // 모바일 메뉴 버튼 클릭 이벤트 (기존 버튼이 있는 경우)
   const mobileMenuBtn = document.getElementById('mobileMenuBtn');
   if (mobileMenuBtn) {
     const mainNav = document.querySelector('.main-nav');
+    
     mobileMenuBtn.addEventListener('click', function() {
       mainNav.classList.toggle('active');
       mobileMenuBtn.classList.toggle('active');
+      
+      // 접근성 속성 추가 (aria-expanded)
+      const isExpanded = mainNav.classList.contains('active');
+      mobileMenuBtn.setAttribute('aria-expanded', isExpanded);
+    });
+    
+    // 모바일 메뉴 내의 링크 클릭 시 메뉴 닫기
+    const mobileNavLinks = mainNav.querySelectorAll('a');
+    mobileNavLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mainNav.classList.remove('active');
+        mobileMenuBtn.classList.remove('active');
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+      });
+    });
+    
+    // 화면 크기 변경 시 모바일 메뉴 상태 관리
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 900) {
+        mainNav.classList.remove('active');
+        mobileMenuBtn.classList.remove('active');
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+      }
     });
   }
 
@@ -129,34 +114,21 @@ document.addEventListener('DOMContentLoaded', () => {
       opacity: 1;
       transform: translateY(0);
     }
-    .mobile-nav {
-      display: none;
-    }
-    .mobile-nav.active {
+    
+    /* 모바일 메뉴 스타일 개선 */
+    .main-nav.active {
       display: flex;
-      flex-direction: column;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      right: 0;
-      background-color: var(--primary-color);
-      padding: 1rem;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     }
-    .mobile-menu-btn {
-      background: none;
-      border: none;
-      color: white;
-      font-size: 1.5rem;
-      cursor: pointer;
+    
+    /* 모바일 메뉴 버튼 애니메이션 */
+    .mobile-menu-btn.active span:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
     }
-    @media (max-width: 768px) {
-      .mobile-nav {
-        display: none;
-      }
-      .mobile-nav.active {
-        display: flex;
-      }
+    .mobile-menu-btn.active span:nth-child(2) {
+      opacity: 0;
+    }
+    .mobile-menu-btn.active span:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
     }
     
     /* 모달 스타일 */
